@@ -14,7 +14,10 @@ echo ".shell-fm/"
 mv ~/.shell-fm ~/.bakConfigs/.shell-fm
 ln -s configs/.shell-fm/ .shell-fm
 
+echo ".vimrc"
 
+mv ~/.vimrc ~/.bakConfigs/.vimrc
+ln -s ~/configs/.vimrc ~/.vimrc
 
 
 echo "\nDone. Have fun"
