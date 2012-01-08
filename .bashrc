@@ -50,7 +50,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+   # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;33m\]'
+    trap 'echo -ne "\e[0m"' DEBUG 
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -102,4 +104,42 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-alias vmax2='ssh -l root vmax2.marekventur.de'
+##### Additions #####
+# VPS
+alias vmax1='ssh root@vmax1.marekventur.de'
+alias vmax2='ssh root@vmax2.marekventur.de'
+
+# last.fm
+# Connect quickly to badger and you vm
+alias vm='ssh YOURVMIP '
+alias log='ssh root@log1'
+alias b='ssh badger.last.fm'
+
+# Save a few keystrokes in svn
+alias st='svn st'
+alias sd='svndiff'
+
+# ack searchs the current dir for files with a given string. Get standalone ack here: http://betterthangrep.com/
+alias ack='~/bin/ack -ai'
+
+# logme: Only output your SVN log entries
+alias logme="svn log | sed -n '/marek/,/-----$/ p'" 
+
+# php_w: Trim trailing whitespace at the end of every line for all PHP files in the
+# current directory
+alias php_w='find . -name "*.php" -exec sed -i "" s/[[:blank:]]*$// {} \;'
+
+# php_l: Check all PHP files in the current directory for syntax errors
+alias php_l='find . -name "*.php" -exec php -l {} \;'
+
+# I never remember the right parameters...
+# unpack <archive>
+alias untargz='tar -zxvf'
+alias untar='tar -xvf'
+alias untarbz2='tar -jxvf'
+
+# pack <archive> <source>
+alias packtar='tar -cvf'
+alias packtargz='tar -zcvf'
+alias packtarbz2='tar -jcvf'
+alias packzip='zip -r'

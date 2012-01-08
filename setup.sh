@@ -19,5 +19,8 @@ echo ".vimrc"
 mv ~/.vimrc ~/.bakConfigs/.vimrc
 ln -s ~/configs/.vimrc ~/.vimrc
 
+echo "Get ack"
+
+sudo curl http://betterthangrep.com/ack-standalone > ~/bin/ack && chmod 0755 !#:3
 
 echo "\nDone. Have fun"
