@@ -120,7 +120,7 @@ alias st='svn st'
 alias sd='svndiff'
 
 # ack searchs the current dir for files with a given string. Get standalone ack here: http://betterthangrep.com/
-alias ack='~/bin/ack -ai'
+alias ack='ack-grep -ai'
 
 # logme: Only output your SVN log entries
 alias logme="svn log | sed -n '/marek/,/-----$/ p'" 

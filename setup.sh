@@ -8,6 +8,7 @@ echo ".bashrc"
 
 mv ~/.bashrc ~/.bakConfigs/.bashrc
 ls -s ~/configs/.bashrc ~/.bashrc
+source ~/.bashrc
 
 echo ".shell-fm/"
 
@@ -19,8 +20,8 @@ echo ".vimrc"
 mv ~/.vimrc ~/.bakConfigs/.vimrc
 ln -s ~/configs/.vimrc ~/.vimrc
 
-echo "Get ack"
+echo "ack-grep"
 
-sudo curl http://betterthangrep.com/ack-standalone > ~/bin/ack && chmod 0755 !#:3
+sudo apt-get install ack-grep
 
 echo "\nDone. Have fun"
