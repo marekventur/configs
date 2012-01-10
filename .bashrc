@@ -113,7 +113,7 @@ alias vmax2='ssh root@vmax2.marekventur.de'
 
 # last.fm
 # Connect quickly to badger and you vm
-alias vm='ssh YOURVMIP '
+alias vm='ssh 10.110.0.132'
 alias log='ssh root@log1'
 alias b='ssh badger.last.fm'
 
@@ -145,3 +145,6 @@ alias packtar='tar -cvf'
 alias packtargz='tar -zcvf'
 alias packtarbz2='tar -jcvf'
 alias packzip='zip -r'
+
+# vmrunnel
+alias vmtunnel='ssh -fNCX -L6666:10.110.0.132:6666 -L8088:10.105.1.9:8088 -L8022:10.110.0.132:22 -L9999:10.0.2.1:9999 badger.last.fm; ssh -fN -p8022 -R9000:localhost:9000 localhost; sshfs vm:/web/site /home/marek/vm'
