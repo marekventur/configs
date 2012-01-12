@@ -1,5 +1,7 @@
+syntax on
 set number
 set ignorecase
+set hlsearch
 
 " Unbind Arrow keys
 inoremap  <Up>     <NOP>
