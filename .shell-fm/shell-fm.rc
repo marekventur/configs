@@ -3,3 +3,6 @@ default-radio = lastfm://user/mareeen
 t-color = 1;32          # light green track titles
 a-color = 0;32          # dark green track artist names
 s-color = 1;37          # white station names
+default-radio = lastfm://user/marekventur/neighbours
+port=54311
+bind=localhost
