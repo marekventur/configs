@@ -147,4 +147,7 @@ alias packtarbz2='tar -jcvf'
 alias packzip='zip -r'
 
 # vmrunnel
-alias vmtunnel='ssh -fNCX -L6666:10.110.0.132:6666 -L8088:10.105.1.9:8088 -L8022:10.110.0.132:22 -L9999:10.0.2.1:9999 badger.last.fm; ssh -fN -p8022 -R9000:localhost:9000 localhost; sshfs vm:/web/site /home/marek/vm'
+alias vmtunnel='sshfs vm:/web/site /home/marek/vm; sshfs vm://userhome/marek/www /home/marek/www'
+
+# proxy
+alias proxy='nohup ssh -D 8080 badger.last.fm -NnT >/dev/null &'
